@@ -6,13 +6,13 @@ This project is a simple and modern blog website built using React, Tailwind CSS
 
 ## Features
 
-React: The project utilizes the React library for building a dynamic and interactive user interface. React's component-based architecture allows for easy organization and maintenance of the code.
+[React](https://react.dev): The project utilizes the React library for building a dynamic and interactive user interface. React's component-based architecture allows for easy organization and maintenance of the code.
 
-Tailwind CSS: The styling of the website is achieved using Tailwind CSS, a utility-first CSS framework. Tailwind CSS provides a set of pre-designed utility classes that make styling efficient and consistent.
+[Tailwind CSS](https://tailwindcss.com/): The styling of the website is achieved using Tailwind CSS, a utility-first CSS framework. Tailwind CSS provides a set of pre-designed utility classes that make styling efficient and consistent.
 
-Typescript: Typescript is employed to enhance the development experience by adding static typing to the JavaScript code. This helps catch errors during development and improves code readability.
+[TypeScript](https://www.typescriptlang.org/): Typescript is employed to enhance the development experience by adding static typing to the JavaScript code. This helps catch errors during development and improves code readability.
 
-Vite: Vite is used as the build tool for the project. It offers fast development server startup and efficient bundling, making the development process smooth and productive.
+[Vite](https://vitejs.dev/): Vite is used as the build tool for the project. It offers fast development server startup and efficient bundling, making the development process smooth and productive.
 
 ## Getting Started
 
