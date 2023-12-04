@@ -11,8 +11,8 @@ export function Content() {
               IMAGE
             </div>
             <div className="m-2">
-              <h1 className="text-4xl font-bold">TITLE</h1>
-              <p>
+              <h1 className="text-4xl font-bold mb-2">TITLE</h1>
+              <p className="mb-2">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam
                 dolore explicabo repellat voluptatibus minima, perspiciatis
                 nostrum laudantium similique necessitatibus consequuntur sit
