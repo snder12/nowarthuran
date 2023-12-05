@@ -9,7 +9,7 @@ export const buttonStyles = cva(
     variants: {
       variant: {
         default: ["bg-secondary", "hover:bg-secondary-hover"],
-        ghost: ["hover:bg-gray-200"],
+        ghost: ["hover:bg-slate-200"],
         dark: [
           "bg-secondary-dark",
           "hover:bg-secondary-dark-hover",
@@ -17,8 +17,8 @@ export const buttonStyles = cva(
         ],
         nowarthuran: [
           "bg-gray-600",
-          "text-white",
-          "hover:bg-gray-200",
+          "text-slate-100",
+          "hover:bg-slate-200",
           "hover:text-black",
         ],
       },

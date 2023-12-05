@@ -5,9 +5,9 @@ import { Button } from "../components/Button";
 export function PageHeader() {
   return (
     <>
-      <div className="flex gap-10 lg:gap-20 justify-between my-3 mx-4">
+      <div className="flex gap-10 lg:gap-20 justify-between my-3 mx-6">
         <div className="flex gap-4 items-center flex-shrink-0">
-          <p className="text-[24px] font-bold italic">NOWARTHURAN</p>
+          <button className="text-[24px] font-bold italic">NOWARTHURAN</button>
         </div>
         <div className="sm:flex hidden flex-shrink-0 md:gap-2 font-medium text-2xl">
           <Button variant="ghost">
@@ -17,7 +17,7 @@ export function PageHeader() {
             <p>About Me</p>
           </Button>
         </div>
-        <div className="flex sm:hidden gap-4 items-center">
+        <div className="sm:flex sm:hidden gap-4 items-center">
           <Button variant="ghost">
             <Menu />
           </Button>
