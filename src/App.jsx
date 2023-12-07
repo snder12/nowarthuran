@@ -9,12 +9,13 @@ export default function App() {
   return (
     <>
       <div className="max-h-screen flex flex-col mx-0 sm:mx-0 md:mx-48 lg:mx-64 xl:80 2xl:mx-96">
-        <div className="sticky top-0 bg-white mx-0 my-0">
+        <div className="sticky top-0 bg-white my-0 mx-6">
           <PageHeader />
-          <div className="mx-6 font-sans">
+          <div className="mx-0 font-sans">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/aboutme" element={<AboutMe />} />
+              <Route path="/post" element={<Post />} />
             </Routes>
           </div>
         </div>
