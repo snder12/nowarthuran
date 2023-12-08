@@ -4,8 +4,8 @@ import PostContents from "../data/postcontent.json";
 
 export function Home() {
   return (
-    <div className="container">
-      <div>
+    <div className="">
+      <div className="items-center">
         {PostContents.map((record) => {
           return (
             <div key={record.id}>
@@ -18,7 +18,7 @@ export function Home() {
                 </div>
                 <div className="md:m-4 sm:m-4 m-0 mt-4 mx-0">
                   <h1 className="text-4xl font-bold mb-2">{record.title}</h1>
-                  <p className="line-clamp-3 text-slate-500 mb-2 ">
+                  <p className="line-clamp-2 text-slate-500 mb-2 ">
                     {record.content}
                   </p>
                   <Button variant="nowarthuran" className="my-2">
