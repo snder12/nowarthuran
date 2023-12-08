@@ -13,9 +13,6 @@ export function PageHeader() {
         </div>
         <div className="sm:flex hidden flex-shrink-0 md:gap-2 font-medium min-[140px]:text-[6px] min-[280px]:text-[12px] min-[380px]:text-[18px] sm:text-[18px] md:text-[18px] lg:text-[24px]">
           <Button variant="ghost">
-            <a href="/post">Post</a>
-          </Button>
-          <Button variant="ghost">
             <a href="/">Blogs</a>
           </Button>
           <Button variant="ghost">
