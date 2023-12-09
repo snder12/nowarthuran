@@ -8,11 +8,32 @@ export function Home() {
 
   useEffect(() => {
     getPosts();
+    displayImage();
   }, []);
 
   const getPosts = async () => {
     const response = await axios.get("http://localhost:3000/post");
     setPost(response.data);
+    // console.log(response.data[0].coverimg);
+  };
+
+  const displayImage = async () => {
+    const response = await axios.get("http://localhost:3000/post");
+    const coverimg = response.data[0].coverimg;
+    if (coverimg instanceof ArrayBuffer) {
+      const uint8Array = new Uint8Array(coverimg);
+      const blobData = new Blob([uint8Array]);
+      const newUrl = URL.createObjectURL(blobData);
+      const newImg = new Image();
+
+      newImg.src = newUrl;
+      newImg.onload = () => {
+        document.body.appendChild(newImg);
+      };
+
+      setPost(newImg);
+    }
+    // console.error(coverimg);
   };
 
   return (
@@ -24,7 +45,8 @@ export function Home() {
               <div className="flex flex-col sm:flex-row my-2 mb-4 items-center">
                 <div className="flex-shrink-0 mx-0 my-2">
                   <img
-                    src=""
+                    id="coverImage"
+                    alt="Cover Image"
                     className={`w-[250px] h-[250px] object-cover rounded-2xl`}
                   />
                 </div>
