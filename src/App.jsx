@@ -7,9 +7,9 @@ import { Route, Routes } from "react-router-dom";
 export default function App() {
   return (
     <>
-      <div className="container mx-auto">
-        <div className="max-w-screen max-h-screen md:mx-8 lg:mx-16 xl:mx-32 2xl:mx-64">
-          <div className="sticky top-0 bg-white my-0 mx-6">
+      <div className="mx-auto container">
+        <div className="max-w-screen max-h-screen md:mx-0 lg:mx-16 xl:mx-48 2xl:mx-80">
+          <div className="sticky top-0 bg-white my-0 mx-0 mx-6">
             <PageHeader />
             <div className="font-sans">
               <Routes>

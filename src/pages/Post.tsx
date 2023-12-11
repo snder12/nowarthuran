@@ -1,30 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "../components/Button";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import dateFormatter from "../utils/dateFormatter";
 import axios from "axios";
 
 export function Post() {
-  const [postInfo, setPostInfo] = useState([]);
+  const [postInfo, setPostInfo] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     getPostInfo();
-  }, []);
+  }, [id]);
 
   const getPostInfo = async () => {
-    const response = await axios.get(`http://localhost:3000/post/${id}`);
-    setPostInfo(response.data);
+    try {
+      const response = await axios.get(`http://localhost:3000/post/${id}`);
+      setPostInfo(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  if (!postInfo) return "";
+  if (!postInfo) {
+    return <p>Loading...</p>;
+  }
 
   return (
-    <div className="">
-      <div className="flex justify-start">
-        <h1 className="text-[36px] font-bold">{postInfo["title"]}</h1>
-      </div>
-      <div>
-        <p>{postInfo["content"]}</p>
+    <div>
+      <div className="">
+        <div className="flex justify-start mb-0">
+          <h1 className="text-4xl font-bold">{postInfo["title"]}</h1>
+        </div>
+        <div className="flex justify-start text-xl mb-4">
+          <p>{dateFormatter.format(new Date(postInfo["createdAt"]))}</p>
+        </div>
+        <div className="flex justify-start text-2xl">
+          <p
+            dangerouslySetInnerHTML={{
+              __html: (postInfo["content"] as string).replace(
+                /<br\s*\/?>/g,
+                "<br/><br/>"
+              ),
+            }}
+          />
+        </div>
       </div>
     </div>
   );
