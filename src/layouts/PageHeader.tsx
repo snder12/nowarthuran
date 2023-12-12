@@ -19,6 +19,7 @@ export function PageHeader() {
             <a href="/aboutme">About Me</a>
           </Button>
         </div>
+        // TODO: Make this button functional
         <div className="sm:flex shrink sm:hidden gap-0">
           <Button variant="ghost">
             <Menu />
