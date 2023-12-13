@@ -39,6 +39,7 @@ export function Home() {
                   <p className="text-2xl line-clamp-2 text-slate-500 mb-0">
                     {post["content"]}
                   </p>
+                  // TODO: Add Author information
                   <Button variant="nowarthuran" className="my-4 text-xl">
                     <Link to={`/post/${post["id"]}`}>Read More</Link>
                   </Button>
