@@ -23,6 +23,9 @@ export function PageHeader() {
           <Button variant="ghost">
             <Menu />
           </Button>
+          <Button variant="ghost">
+            <Menu />
+          </Button>
         </div>
       </div>
     </>
