@@ -42,6 +42,9 @@ export function Home() {
                   <Button variant="nowarthuran" className="my-4 text-xl">
                     <Link to={`/post/${post["id"]}`}>Read More</Link>
                   </Button>
+                  <Button variant="nowarthuran" className="my-4 text-xl">
+                    <Link to={`/post/${post["id"]}`}>Read More</Link>
+                  </Button>
                 </div>
               </div>
             </div>
