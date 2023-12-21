@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import dateFormatter from "../utils/dateFormatter";
+import DateFormatter from "../utils/DateFormatter";
 import axios from "axios";
 
 export function Post() {
@@ -26,23 +26,22 @@ export function Post() {
 
   return (
     <div>
-      <div className="">
-        <div className="flex justify-start mb-0">
-          <h1 className="text-4xl font-bold">{postInfo["title"]}</h1>
-        </div>
-        <div className="flex justify-start text-xl mb-4">
-          <p>{dateFormatter.format(new Date(postInfo["createdAt"]))}</p>
-        </div>
-        <div className="flex justify-start text-2xl">
-          <p
-            dangerouslySetInnerHTML={{
-              __html: (postInfo["content"] as string).replace(
-                /<br\s*\/?>/g,
-                "<br/><br/>"
-              ),
-            }}
-          />
-        </div>
+      <div className="flex justify-start mb-0">
+        <h1 className="text-4xl font-bold">{postInfo["title"]}</h1>
+      </div>
+      <div className="flex justify-start text-xl mb-2">
+        <DateFormatter date={postInfo["createdAt"]} />
+      </div>
+      <div className="flex justify-start text-2xl">
+        {/* TODO: maybe it is not best practice, need to fix */}
+        <p
+          dangerouslySetInnerHTML={{
+            __html: (postInfo["content"] as string).replace(
+              /<br\s*\/?>/g,
+              "<br/><br/>"
+            ),
+          }}
+        />
       </div>
     </div>
   );

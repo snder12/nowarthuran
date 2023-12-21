@@ -1,44 +1,30 @@
-# Nowarthuran Blog
+# React + TypeScript + Vite
 
-## Overview
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This project is a simple and modern blog website built using React, Tailwind CSS, Typescript, and Vite. It aims to provide a clean and efficient platform for blogging with a focus on a responsive and visually appealing user interface.
+Currently, two official plugins are available:
 
-## Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-[React](https://react.dev): The project utilizes the React library for building a dynamic and interactive user interface. React's component-based architecture allows for easy organization and maintenance of the code.
+## Expanding the ESLint configuration
 
-[Tailwind CSS](https://tailwindcss.com/): The styling of the website is achieved using Tailwind CSS, a utility-first CSS framework. Tailwind CSS provides a set of pre-designed utility classes that make styling efficient and consistent.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-[TypeScript](https://www.typescriptlang.org/): Typescript is employed to enhance the development experience by adding static typing to the JavaScript code. This helps catch errors during development and improves code readability.
+- Configure the top-level `parserOptions` property like this:
 
-[Vite](https://vitejs.dev/): Vite is used as the build tool for the project. It offers fast development server startup and efficient bundling, making the development process smooth and productive.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Getting Started
-
-Prerequisites
-Before you begin, ensure you have the following installed:
-
-- Node.js
-- npm (Node Package Manager)
-
-To get a local copy of the project up and running, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/snder12/nowarthuran.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd nowarthuran
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-4. **Run this project:**
-   ```bash
-   npm run dev
-   ```
-
-Contributions are welcome!
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
