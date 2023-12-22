@@ -32,13 +32,13 @@ export function Home() {
                     {post["title"]}
                   </h1>
                 </Link>
-                <div className="text-xl mb-2">
+                <div className="text-xs mb-2">
                   <DateFormatter date={post["createdAt"]} />
                 </div>
-                <p className="text-2xl line-clamp-2 text-slate-500 mb-0">
+                <p className="text-base line-clamp-2 text-slate-500 mb-0">
                   {post["content"]}
                 </p>
-                <Button variant="nowarthuran" className="my-4 text-xl">
+                <Button variant="nowarthuran" className="my-4 text-base">
                   <Link to={`/post/${post["id"]}`}>Read More</Link>
                 </Button>
               </div>
