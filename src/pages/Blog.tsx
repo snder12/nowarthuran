@@ -28,23 +28,15 @@ export function Blog() {
   }
 
   return (
-    <div className="my-2">
+    <div className="my-2 pb-5 break-words whitespace-pre-line">
       <div className="flex justify-start mb-0">
-        <h1 className="font-bold text-4xl">{blogInfo["title"]}</h1>
+        <h1 className="font-bold text-2xl">{blogInfo["title"]}</h1>
       </div>
       <div className="flex justify-start mb-2 text-xs">
         <DateFormatter date={blogInfo["createdAt"]} />
       </div>
       <div className="flex justify-start text-base">
-        {/* TODO: maybe it is not best practice, need to fix */}
-        <p
-          dangerouslySetInnerHTML={{
-            __html: (blogInfo["content"] as string).replace(
-              /<br\s*\/?>/g,
-              "<br/><br/>"
-            ),
-          }}
-        />
+        <p>{blogInfo["content"]}</p>
       </div>
     </div>
   );

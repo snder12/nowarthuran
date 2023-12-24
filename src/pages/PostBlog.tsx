@@ -1,7 +1,40 @@
+import { useState, FormEvent } from "react";
+
 export function PostBlog() {
-  // reference: https://tailwindui.com/components/application-ui/forms/form-layouts
+  const [formTitle, setFormTitle] = useState("");
+  const [formContent, setFormContent] = useState("");
+
+  async function onSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:3000/postblog", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Add any other headers if needed
+        },
+        body: JSON.stringify({
+          title: formTitle,
+          content: formContent,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save blog");
+      }
+
+      // Handle success, e.g., show a success message or redirect
+      alert("Blog saved successfully");
+    } catch (error) {
+      console.error("Error saving blog:", error);
+      // Handle error, e.g., show an error message to the user
+      alert("Failed to save blog");
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <div className="space-y-12">
         <div className="">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -24,11 +57,11 @@ export function PostBlog() {
                     autoComplete="title"
                     className="block flex-1 border-0 bg-transparent py-1.5 px-2.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Write your title here.."
+                    onChange={(e) => setFormTitle(e.target.value)}
                   />
                 </div>
               </div>
             </div>
-
             <div className="col-span-full">
               <label
                 htmlFor="content"
@@ -44,6 +77,7 @@ export function PostBlog() {
                   className="block w-full rounded-md border-0 py-1.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   defaultValue={""}
                   placeholder="Write your content here.."
+                  onChange={(e) => setFormContent(e.target.value)}
                 />
               </div>
             </div>

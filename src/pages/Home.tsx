@@ -13,7 +13,7 @@ export function Home() {
 
   const getBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/Blog");
+      const response = await axios.get("http://localhost:3000/blog");
       setBlog(response.data);
     } catch (error) {
       console.error(error);
@@ -22,13 +22,13 @@ export function Home() {
 
   return (
     <div className="items-center">
-      {blogs.map((blog, index) => {
+      {blogs.map((blog) => {
         return (
-          <div key={blog["id"]}>
+          <div className="break-words" key={blog["id"]}>
             <div className="flex flex-col sm:flex-row my-2 mb-4 items-center">
               <div className="md:m-0 sm:m-0 m-0 mx-0">
                 <Link to={`/blog/${blog["id"]}`}>
-                  <h1 className="hover:underline text-4xl font-bold">
+                  <h1 className="hover:underline text-2xl font-bold">
                     {blog["title"]}
                   </h1>
                 </Link>
