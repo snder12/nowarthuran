@@ -5,16 +5,16 @@ import DateFormatter from "../utils/DateFormatter";
 import axios from "axios";
 
 export function Home() {
-  const [posts, setPost] = useState([]);
+  const [blogs, setBlog] = useState([]);
 
   useEffect(() => {
-    getPosts();
+    getBlogs();
   }, []);
 
-  const getPosts = async () => {
+  const getBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/post");
-      setPost(response.data);
+      const response = await axios.get("http://localhost:3000/Blog");
+      setBlog(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -22,24 +22,24 @@ export function Home() {
 
   return (
     <div className="items-center">
-      {posts.map((post, index) => {
+      {blogs.map((blog, index) => {
         return (
-          <div key={post["id"]}>
+          <div key={blog["id"]}>
             <div className="flex flex-col sm:flex-row my-2 mb-4 items-center">
               <div className="md:m-0 sm:m-0 m-0 mx-0">
-                <Link to={`/post/${post["id"]}`}>
+                <Link to={`/blog/${blog["id"]}`}>
                   <h1 className="hover:underline text-4xl font-bold">
-                    {post["title"]}
+                    {blog["title"]}
                   </h1>
                 </Link>
                 <div className="text-xs mb-2">
-                  <DateFormatter date={post["createdAt"]} />
+                  <DateFormatter date={blog["createdAt"]} />
                 </div>
                 <p className="text-base line-clamp-2 text-slate-500 mb-0">
-                  {post["content"]}
+                  {blog["content"]}
                 </p>
                 <Button variant="nowarthuran" className="my-4 text-base">
-                  <Link to={`/post/${post["id"]}`}>Read More</Link>
+                  <Link to={`/blog/${blog["id"]}`}>Read More</Link>
                 </Button>
               </div>
             </div>

@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { PageHeader } from "./layouts/PageHeader";
 import { Home } from "./pages/Home";
-import { Post } from "./pages/Post";
+import { Blog } from "./pages/Blog";
+import { PostBlog } from "./pages/PostBlog";
 import { AboutMe } from "./pages/AboutMe";
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
           <PageHeader />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/post/:id" element={<Post />} />
+            <Route path="/blog/:id" element={<Blog />} />
+            <Route path="/postblog" element={<PostBlog />} />
             <Route path="/aboutme" element={<AboutMe />} />
           </Routes>
         </div>

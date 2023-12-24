@@ -18,7 +18,10 @@ export function PageHeader() {
               <a href="/">NOWARTHURAN</a>
             </button>
           </div>
-          <div className="sm:flex hidden flex-shrink-0 md:gap-2 font-medium min-[140px]:text-lg min-[280px]:text-lg min-[380px]:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl">
+          <div className="sm:flex hidden flex-shrink-0 md:gap-2 font-medium min-[140px]:text-lg min-[280px]:text-lg min-[380px]:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">
+            <Button variant="ghost">
+              <a href="/postblog">Post New Blog</a>
+            </Button>
             <Button variant="ghost">
               <a href="/">Blogs</a>
             </Button>
@@ -44,6 +47,9 @@ export function PageHeader() {
                   <div className="flex flex-col bg-white rounded shadow-xl p-2 mx-4 my-2 items-end min-[140px]:text-lg min-[280px]:text-lg min-[380px]:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl xl:text-xl">
                     <Button variant="ghost">
                       <X onClick={handleButtonClick} />
+                    </Button>
+                    <Button variant="ghost">
+                      <a href="/postblog">Post New Blog</a>
                     </Button>
                     <Button variant="ghost">
                       <a href="/">Blogs</a>
