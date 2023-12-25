@@ -8,15 +8,15 @@ export function Blog() {
   // renaming Post.tsx to Blog.tsx on 05:10 24-12-2023 UTC GMT+7
   // variable postInfo need to change to blogInfo below or not?
   const [blogInfo, setBlogInfo] = useState(null);
-  const { id } = useParams();
+  const { slug } = useParams();
 
   useEffect(() => {
     getBlogInfo();
-  }, [id]);
+  }, [slug]);
 
   const getBlogInfo = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/blog/${id}`);
+      const response = await axios.get(`http://localhost:3000/blog/${slug}`);
       setBlogInfo(response.data);
     } catch (error) {
       console.error(error);
