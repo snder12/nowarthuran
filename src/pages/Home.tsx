@@ -27,7 +27,7 @@ export function Home() {
           <div className="break-words" key={blog["id"]}>
             <div className="flex flex-col sm:flex-row my-2 mb-4 items-center">
               <div className="md:m-0 sm:m-0 m-0 mx-0">
-                <Link to={`/blog/${blog["id"]}`}>
+                <Link to={`/blog/${blog["slug"]}`}>
                   <h1 className="hover:underline text-2xl font-bold">
                     {blog["title"]}
                   </h1>
@@ -39,7 +39,7 @@ export function Home() {
                   {blog["content"]}
                 </p>
                 <Button variant="nowarthuran" className="my-4 text-base">
-                  <Link to={`/blog/${blog["id"]}`}>Read More</Link>
+                  <Link to={`/blog/${blog["slug"]}`}>Read More</Link>
                 </Button>
               </div>
             </div>
